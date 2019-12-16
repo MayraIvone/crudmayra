@@ -15,7 +15,7 @@
                 <div class="col md-5">
                         <div class="card">
                                 <div class="card-body">
-                                        <form action="/update/<%= data.id %>" method="post" onsubmit="return Check()">
+                                        <form action="/update/<%= data.id %>" method="post">
                                             <div class="form-group">
                                                     <label>EDITA TUS DATOS</label>
                                                     <br>
@@ -31,7 +31,7 @@
                                                           <input type="text" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="8" maxlength="50" required>
                                                       </div>
                                                       <button onClick="PDF();" class="btn btn-warning">PDF</button>
-                                                      <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
+                                                      <button onClick="Check(); type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
                                             </form>
                                     </div>
                                     </div>

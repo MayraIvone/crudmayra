@@ -55,7 +55,7 @@
     <div class="col md-5">
     <div class="card">
       <div class="card-body">
-      <form action="/add" method="post" onsubmit="return Check()">
+      <form action="/add" method="post">
       <div class="form-group">
          <label>INGRESA TUS DATOS</label>
          <br>
@@ -74,7 +74,7 @@
                     <label>Fecha Nacimiento:</label>
                     <input type="date" name="fnacimiento" class="form-control" minlength="10" maxlength="50" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button onsubmit="Check()" type="submit" class="btn btn-primary">Registrar</button>
       </form>
       </div>  
         </div>
