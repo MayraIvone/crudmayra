@@ -18,16 +18,16 @@
                                             <div class="form-group">
                                                     <label>EDITA TUS DATOS</label>
                                                     <br>
-                                                <input type="text" id="nombre" name="nombre" value="<%= data.nombre %>" class="form-control" minlength="10" maxlength="45" required onkeypress="return soloLetras(event)">
+                                                <input type="text" id="nombre" name="nombre" value="<%= data.nombre %>" class="form-control" minlength="3" maxlength="45" required onkeypress="return soloLetras(event)">
                                             </div>
                                             <div class="form-group">
-                                                  <input type="text" id="apaterno" name="apaterno" value="<%= data.apaterno %>" class="form-control" minlength="10" maxlength="45" required onkeypress="return soloLetras(event)">
+                                                  <input type="text" id="apaterno" name="apaterno" value="<%= data.apaterno %>" class="form-control" minlength="3" maxlength="45" required onkeypress="return soloLetras(event)">
                                               </div>
                                               <div class="form-group">
-                                                      <input type="text" id="amaterno" name="amaterno" value="<%= data.amaterno %>" class="form-control" minlength="10" maxlength="45" required onkeypress="return soloLetras(event)">
+                                                      <input type="text" id="amaterno" name="amaterno" value="<%= data.amaterno %>" class="form-control" minlength="3" maxlength="45" required onkeypress="return soloLetras(event)">
                                                   </div>
                                                   <div class="form-group">
-                                                          <input type="date" id="fnacimiento" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="20" maxlength="50" required>
+                                                          <input type="date" id="fnacimiento" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="8" maxlength="50" required>
                                                       </div>
                                                       <button onClick="javascript:PDF()" class="btn btn-warning">PDF</button>
                                                       <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
