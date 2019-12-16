@@ -55,7 +55,7 @@
     <div class="col md-5">
     <div class="card">
       <div class="card-body">
-      <form action="/add" method="post" onsubmit="return Check()">
+      <form action="/add" method="post" onsubmit="return validar()">
       <div class="form-group">
          <label>INGRESA TUS DATOS</label>
          <br>
@@ -83,25 +83,26 @@
 </div>
 
 <script>
-    function Check() {
-        
-               var nombre = document.getElementById("nombre").value;
-               var apaterno = document.getElementById("apaterno").value;
-               var amaterno = document.getElementById("amaterno").value;
-               if(nombre.length == 0 || /^\s+$/.test(nom)){
-                   alert('Formato incorrecto');
-                   return false;
-               }
-               if(apaterno.length == 0 || /^\s+$/.test(app)){
-                   alert('Formato incorrecto');
-                   return false;
-               }
-               if(amaterno.length == 0 || /^\s+$/.test(apm)){
-                   alert('Formato incorrecto');
-                   return false;
-               }
-        return true;
-        }
+    function validar() {
+//obteniendo el valor que se puso en el campo text del formulario
+  var miCampoTexto1 = document.getElementById("nombre").value;
+      var miCampoTexto2 = document.getElementById("apaterno").value;
+      var miCampoTexto3 = document.getElementById("amaterno").value;
+      if(miCampoTexto1.length == 0 || /^\s+$/.test(miCampoTexto1)){
+          alert('DEBE ESCRIBIR UN NOMBRE!');
+          return false;
+      }
+      if(miCampoTexto2.length == 0 || /^\s+$/.test(miCampoTexto2)){
+          alert('DEBE ES UN APELLIDO PATERNO!');
+          return false;
+      }
+      if(miCampoTexto3.length == 0 || /^\s+$/.test(miCampoTexto3)){
+          alert('ESCRIBA UN APELLIDO MATERNO!');
+          return false;
+      }
+return true;
+}
+    
 </script> 
 
 <script>
