@@ -34,7 +34,7 @@
                                                           <input type="text" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="8" maxlength="50" required>
                                                       </div>
                                                       <button onClick="javascript:PDF();" class="btn btn-warning">PDF</button>
-                                                      <button type="submit" class="btn btn-primary"></button>
+                                                      <button type="submit" class="btn btn-primary">Actualizar</button>
                                             </form>
                                     </div>
                                     </div>
@@ -54,18 +54,16 @@
     tecla_especial = true;
         break;
             }
-    }
-                
+    }            
     if(letras.indexOf(tecla)==-1 && !tecla_especial){
         return false;
             }
     }
+</script>
 
-    </script>
 
 <script>
     function validar() {
-//obteniendo el valor que se puso en el campo text del formulario
   var miCampoTexto1 = document.getElementById("nombre").value;
       var miCampoTexto2 = document.getElementById("apaterno").value;
       var miCampoTexto3 = document.getElementById("amaterno").value;
@@ -109,5 +107,5 @@ return true;
 }
 
 </script> 
-  </body>
+</body>
 </html>
