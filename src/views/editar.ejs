@@ -15,7 +15,7 @@
                 <div class="col md-5">
                         <div class="card">
                                 <div class="card-body">
-                                        <form action="/update/<%= data.id %>" method="post">
+                                        <form action="/update/<%= data.id %>" method="post" onsubmit="return Check()">
                                             <div class="form-group">
                                                     <label>EDITA TUS DATOS</label>
                                                     <br>
@@ -38,26 +38,49 @@
             </div>
             </div>
 
-            <script>
-                    function soloLetras(e){
-                       key = e.keyCode || e.which;
-                       tecla = String.fromCharCode(key).toLowerCase();
-                       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-                       especiales = "8-37-39-46";
+<script>
+   function soloLetras(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+    especiales = "8-37-39-46";
                 
-                       tecla_especial = false
-                       for(var i in especiales){
-                            if(key == especiales[i]){
-                                tecla_especial = true;
-                                break;
-                            }
-                        }
+    tecla_especial = false
+    for(var i in especiales){
+    if(key == especiales[i]){
+    tecla_especial = true;
+        break;
+            }
+    }
                 
-                        if(letras.indexOf(tecla)==-1 && !tecla_especial){
-                            return false;
-                        }
-                    }
-                </script>
+    if(letras.indexOf(tecla)==-1 && !tecla_especial){
+        return false;
+            }
+    }
+    </script>
+
+<script>
+    function Check() {
+        
+               var nom = document.getElementById("nombre").value;
+               var app = document.getElementById("apaterno").value;
+               var apm = document.getElementById("amaterno").value;
+               if(nom.length == 0 || /^\s+$/.test(nom)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+               if(app.length == 0 || /^\s+$/.test(app)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+               if(apm.length == 0 || /^\s+$/.test(apm)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+        return true;
+        }
+</script>   
+
 <script type="text/javascript">
     function PDF(){
     alert('Descargar pdf');

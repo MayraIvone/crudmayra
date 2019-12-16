@@ -55,7 +55,7 @@
     <div class="col md-5">
     <div class="card">
       <div class="card-body">
-      <form action="/add" method="post">
+      <form action="/add" method="post" onsubmit="return Check()">
       <div class="form-group">
          <label>INGRESA TUS DATOS</label>
          <br>
@@ -81,6 +81,28 @@
     </div>
 </div>
 </div>
+
+<script>
+function Check() {
+    
+           var nom = document.getElementById("nombre").value;
+           var app = document.getElementById("apaterno").value;
+           var apm = document.getElementById("amaterno").value;
+           if(nom.length == 0 || /^\s+$/.test(nom)){
+               alert('Formato incorrecto');
+               return false;
+           }
+           if(app.length == 0 || /^\s+$/.test(app)){
+               alert('Formato incorrecto');
+               return false;
+           }
+           if(apm.length == 0 || /^\s+$/.test(apm)){
+               alert('Formato incorrecto');
+               return false;
+           }
+    return true;
+    }
+</script>   
 
 <script>
         function soloLetras(e){
