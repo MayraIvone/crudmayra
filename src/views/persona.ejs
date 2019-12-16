@@ -55,7 +55,7 @@
     <div class="col md-5">
     <div class="card">
       <div class="card-body">
-      <form action="/add" method="post">
+      <form action="/add" method="post" onsubmit="return Check()">
       <div class="form-group">
          <label>INGRESA TUS DATOS</label>
          <br>
@@ -74,7 +74,7 @@
                     <label>Fecha Nacimiento:</label>
                     <input type="date" name="fnacimiento" class="form-control" minlength="10" maxlength="50" required>
                 </div>
-                <button onClick="javascript:Check();" type="submit" class="btn btn-primary">Registrar</button>
+                <button type="submit" class="btn btn-primary">Registrar</button>
       </form>
       </div>  
         </div>
@@ -83,26 +83,26 @@
 </div>
 
 <script>
-function Check() {
-    
-           var nom = document.getElementById("nombre").value;
-           var app = document.getElementById("apaterno").value;
-           var apm = document.getElementById("amaterno").value;
-           if(nom.length == 0 || /^\s+$/.test(nom)){
-               alert('Formato incorrecto');
-               return false;
-           }
-           if(app.length == 0 || /^\s+$/.test(app)){
-               alert('Formato incorrecto');
-               return false;
-           }
-           if(apm.length == 0 || /^\s+$/.test(apm)){
-               alert('Formato incorrecto');
-               return false;
-           }
-    return true;
-    }
-</script>   
+    function Check() {
+        
+               var nombre = document.getElementById("nombre").value;
+               var apaterno = document.getElementById("apaterno").value;
+               var amaterno = document.getElementById("amaterno").value;
+               if(nombre.length == 0 || /^\s+$/.test(nom)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+               if(apaterno.length == 0 || /^\s+$/.test(app)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+               if(amaterno.length == 0 || /^\s+$/.test(apm)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+        return true;
+        }
+</script> 
 
 <script>
         function soloLetras(e){

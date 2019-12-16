@@ -15,7 +15,7 @@
                 <div class="col md-5">
                         <div class="card">
                                 <div class="card-body">
-                                        <form action="/update/<%= data.id %>" method="post" >
+                                        <form action="/update/<%= data.id %>" method="post" onsubmit="return Check()" >
                                             <div class="form-group">
                                                     <label>EDITA TUS DATOS</label>
                                                     <br>
@@ -31,34 +31,34 @@
                                                           <input type="date" id="fnacimiento" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="8" maxlength="50" required>
                                                       </div>
                                                       <button onClick="javascript:PDF()" class="btn btn-warning">PDF</button>
-                                                      <button onSubmit="return Check()"type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
+                                                      <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
                                             </form>
                                     </div>
                                     </div>
             </div>
             </div>
 
-<script>
-function Check() {
-    
-           var nom = document.getElementById("nombre").value;
-           var app = document.getElementById("apaterno").value;
-           var apm = document.getElementById("amaterno").value;
-           if(nom.length == 0 || /^\s+$/.test(nom)){
-               alert('Formato incorrecto');
-               return false;
-           }
-           if(app.length == 0 || /^\s+$/.test(app)){
-               alert('Formato incorrecto');
-               return false;
-           }
-           if(apm.length == 0 || /^\s+$/.test(apm)){
-               alert('Formato incorrecto');
-               return false;
-           }
-    return true;
-    }
-</script> 
+            <script>
+               function Check() {
+                   
+                          var nombre = document.getElementById("nombre").value;
+                          var apaterno = document.getElementById("apaterno").value;
+                          var amaterno = document.getElementById("amaterno").value;
+                          if(nombre.length == 0 || /^\s+$/.test(nom)){
+                              alert('Formato incorrecto');
+                              return false;
+                          }
+                          if(apaterno.length == 0 || /^\s+$/.test(app)){
+                              alert('Formato incorrecto');
+                              return false;
+                          }
+                          if(amaterno.length == 0 || /^\s+$/.test(apm)){
+                              alert('Formato incorrecto');
+                              return false;
+                          }
+                   return true;
+                   }
+           </script> 
 
 <script>
     function PDF(){
