@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Editar Persona</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">  
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a href="/" class="navbar-brand">CRUD PERSONA MAYRA</a>
+</nav>
+<div class="container mt-5">
+        <div class="row">
+                <div class="col md-5">
+                        <div class="card">
+                                <div class="card-body">
+                                        <form action="/update/<%= data.id %>" method="post">
+                                            <div class="form-group">
+                                                    <label>EDITA TUS DATOS</label>
+                                                    <br>
+                                                <input type="text" name="nombre" value="<%= data.nombre %>" class="form-control" minlength="10" maxlength="45" required onkeypress="return soloLetras(event)">
+                                            </div>
+                                            <div class="form-group">
+                                                  <input type="text" name="apaterno" value="<%= data.apaterno %>" class="form-control" minlength="10" maxlength="45" required onkeypress="return soloLetras(event)">
+                                              </div>
+                                              <div class="form-group">
+                                                      <input type="text" name="amaterno" value="<%= data.amaterno %>" class="form-control" minlength="10" maxlength="45" required onkeypress="return soloLetras(event)">
+                                                  </div>
+                                                  <div class="form-group">
+                                                          <input type="text" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="20" maxlength="50" required>
+                                                      </div>
+                                                      <button onClick="PDF();" class="btn btn-warning">PDF</button>
+                                                      <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
+                                            </form>
+                                    </div>
+                                    </div>
+            </div>
+            </div>
+
+            <script>
+                    function soloLetras(e){
+                       key = e.keyCode || e.which;
+                       tecla = String.fromCharCode(key).toLowerCase();
+                       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+                       especiales = "8-37-39-46";
+                
+                       tecla_especial = false
+                       for(var i in especiales){
+                            if(key == especiales[i]){
+                                tecla_especial = true;
+                                break;
+                            }
+                        }
+                
+                        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+                            return false;
+                        }
+                    }
+                </script>
+<script type="text/javascript">
+    function PDF(){
+    alert('Descargar pdf');
+    var nombre = document.getElementById("nombre").value;
+    var paterno = document.getElementById("apaterno").value;
+    var materno = document.getElementById("amaterno").value;
+    var fecha = document.getElementById("fnacimiento").value;
+    
+    var pdf = new jsPDF();
+    pdf.setFontSize(10);
+    pdf.text(12,20, 'Detalle persona');
+    pdf.setFontSize(12);
+    
+    var columnas =["Nombre (s)", "Apellido Paterno","Apellido Materno","Fecha Nacimiento"];
+    var consulta = [[nombre,paterno,materno,fecha]];
+    
+    pdf.autoTable(columnas, consulta,
+    {margin: { top: 75}});
+
+    pdf.save('Reporte.pdf');
+}
+
+</script> 
+  </body>
+</html>
