@@ -39,7 +39,7 @@ const data =req.body;
     const newPersona = req.body;
     req.getConnection((err, conn)=>{
         conn.query('UPDATE persona set ? WHERE id =?', [newPersona, id],(err,rows)=> {
-            res.redirect('/editarpersona.js');
+            //res.redirect('');
         });
         });
  };
