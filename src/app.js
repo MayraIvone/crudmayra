@@ -17,11 +17,11 @@ app.set('views', path.join(__dirname,'views'));
 //Funciones antes de las peticiones de usuario
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host:'localhost',
-    user:'root',
-    password:'1234',
+    host:'sql3.freesqldatabase.com',
+    user:'sql3315962',
+    password:'CgGUwjlQEV',
     port:3306,
-    database:'crud'
+    database:'sql3315962'
 }, 'single'));
 
 app.use(express.urlencoded({extended: false}));
