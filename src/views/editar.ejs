@@ -34,7 +34,7 @@
                                                           <input type="text" name="fnacimiento" value="<%= data.fnacimiento %>" class="form-control" minlength="8" maxlength="50" required>
                                                       </div>
                                                       <button onClick="javascript:PDF();" class="btn btn-warning">PDF</button>
-                                                      <button onClick="Check()" type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Actualizar</button>
+                                                      <button type="submit" class="btn btn-primary"></button>
                                             </form>
                                     </div>
                                     </div>
@@ -60,6 +60,24 @@
         return false;
             }
     }
+
+    var nom = document.getElementById("nombre").value;
+               var app = document.getElementById("apaterno").value;
+               var apm = document.getElementById("amaterno").value;
+               if(nom.length == 0 || /^\s+$/.test(nom)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+               if(app.length == 0 || /^\s+$/.test(app)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+               if(apm.length == 0 || /^\s+$/.test(apm)){
+                   alert('Formato incorrecto');
+                   return false;
+               }
+        return true;
+        
     </script>
 
 <script>
